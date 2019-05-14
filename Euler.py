@@ -5,7 +5,7 @@
 #     for i in range(limit):
 #         if i % 3 == 0 or i % 5 == 0:
 #             sum += i
-#             print(sum)
+#     print(sum)
 #
 # m3o5(1000)
 
@@ -33,17 +33,28 @@
 
 #TODO: Find the largest palindrome made from the product of two 3-digit numbers.
 
-def pali(limit_up, limit_down):
-    pals = []
-    for i in range(limit_up, limit_down, -1):
-        for j in range(limit_up, limit_down, -1):
-            sum = i * j
-            L = list(map(int, str(sum)))
-            if L == L[::-1]:
-                pals.append(sum)
-    print(max(pals))
+# def pali(limit_up, limit_down):
+#     pals = []
+#     for i in range(limit_up, limit_down, -1):
+#         for j in range(limit_up, limit_down, -1):
+#             sum = i * j
+#             L = list(map(int, str(sum)))
+#             if L == L[::-1]:
+#                 pals.append(sum)
+#     print(max(pals))
+#
+# pali(1000, 100)
 
-pali(1000, 100)
+#TODO: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+
+from math import gcd
+
+lcd = 1
+for i in range(20):
+    lcd *= (i + 1) // gcd(lcd, i + 1)
+print(lcd)
+
 
 
 
