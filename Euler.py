@@ -47,18 +47,29 @@
 
 #TODO: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
+# from math import gcd
+#
+# lcd = 1
+# for i in range(20):
+#     lcd *= (i + 1) // gcd(lcd, i + 1)
+# print(lcd)
 
-from math import gcd
+#TODO: Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-lcd = 1
-for i in range(20):
-    lcd *= (i + 1) // gcd(lcd, i + 1)
-print(lcd)
+def sum(limit):
+    sum_sq = 0
+    for i in range(1, limit + 1):
+        sum_sq += i**2
+    print(sum_sq)
 
+    sum_sum = 0
+    for j in range(1, limit + 1):
+        sum_sum += j
+        sum_sum2 = sum_sum**2
+    print(sum_sum2)
 
-
-
-
+    print(sum_sum2 - sum_sq)
+sum(100)
 
 
 
