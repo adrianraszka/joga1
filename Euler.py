@@ -56,27 +56,57 @@
 
 #TODO: Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-def sum(limit):
-    sum_sq = 0
-    for i in range(1, limit + 1):
-        sum_sq += i**2
-    print(sum_sq)
+# def sum(limit):
+#     sum_sq = 0
+#     for i in range(1, limit + 1):
+#         sum_sq += i**2
+#     print(sum_sq)
+#
+#     sum_sum = 0
+#     for j in range(1, limit + 1):
+#         sum_sum += j
+#         sum_sum2 = sum_sum**2
+#     print(sum_sum2)
+#
+#     print(sum_sum2 - sum_sq)
+# sum(100)
 
-    sum_sum = 0
-    for j in range(1, limit + 1):
-        sum_sum += j
-        sum_sum2 = sum_sum**2
-    print(sum_sum2)
-
-    print(sum_sum2 - sum_sq)
-sum(100)
-
-
-
-
+#TODO: What is the 10001st prime number? (thanks stackoverflow)
 
 
+# primez = []
+# i = 1
+# j = 4
+# while 0 == 0:
+#     i += 1
+# sieve becomes useless for large numbers
+#     if i % 2 != 0 and i % 3 != 0 and i % 5 != 0 and i % 7 != 0 and i % 11 != 0 and i % 13 != 0:
+#         j += 1
+#         print(j, i)
+#         if i == 104743:
+#             break;
 
+
+def is_prime(n):
+    if n < 2:
+        return False
+    i = 3
+    while (i * i <= n):
+        if n % i == 0:
+            return False
+        i += 2
+    return True
+
+def n_prime(n):
+    i = 3
+    while n > 0:
+        if is_prime(i):
+            n -= 1
+            if n == 0:
+                return i
+        i += 2
+
+print(n_prime(10001 -1))
 
 
 
